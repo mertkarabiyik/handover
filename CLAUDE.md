@@ -4,7 +4,8 @@ Handover is a training app for beginner techno DJs: an AI coach teaches transiti
 
 ## Where things are
 
-- `index.html` – v0 prototype, live as a claude.ai artifact: set planner, prep coach, random B2B partner. Single file, no build, TR/EN/DE.
+- `index.html` + `src/ui/` – clickable prototype of the five designed screens, sample data, no build. One file per screen in `src/ui/screens/`; hash routes (`#/ders`, `#/drill`, …). Serve with `tools/serve.ps1` (http://localhost:5173); Node is not installed.
+- `legacy/index.html` – v0 prototype, live as a claude.ai artifact: set planner, prep coach, random B2B partner. Single file, no build, TR/EN/DE. No new features (DECISIONS).
 - `design/` – screen designs (Design canvas exports). They need the canvas runtime; read them as reference, do not serve them.
 - `docs/VISION.md` – what we are building and why.
 - `docs/ARCHITECTURE.md` – the technical system and build order.

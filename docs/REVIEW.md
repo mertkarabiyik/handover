@@ -18,6 +18,8 @@
 
 ## Küçük (tasarım)
 
+9–12 tıklanabilir prototipte (`src/ui/`) çözüldü; tasarım tuvali henüz güncellenmedi.
+
 9. Ders ekranındaki "Örneği dinle" düğmesinin kaynağı yok; örnek ses lisans gerektirir. Seçenek: kullanıcının kendi iki şarkısıyla otomatik örnek.
 10. B2B ekranında oturumu duraklatma ve bitirme kontrolü yok.
 11. Drill ekranı canlı durum ile önceki denemenin sonucunu aynı anda gösteriyor; gerçek akışta deneme sırasında sonuç kartı gizli olmalı.

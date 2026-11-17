@@ -4,6 +4,8 @@ Yeni kararlar en üste. Her satır: tarih, karar, neden.
 
 | Tarih | Karar | Neden |
 |---|---|---|
+| 2026-11-17 | Tasarımdaki 5 ekran derlemesiz, tıklanabilir prototip olarak kuruldu (`index.html` + `src/ui/`); v0 `legacy/` altına taşındı. Vite + TypeScript, MIDI/puanlama kodu yazılırken (yapım sırası 1–3) kurulacak | Akışı FLX4 gelmeden görmek; bilgisayarda Node yok, prototip için gerekmiyor |
+| 2026-11-17 | REVIEW madde 9–12 prototipte çözüldü: "Örneği dinle" kütüphaneye kadar kapalı, B2B'de duraklat/bitir, drill'de sonuç kartı deneme sırasında gizli, ortak `.sr-only` sınıfı | Tasarımdaki küçük açıklar koda taşınmasın |
 | 2026-11-17 | Proje bilgisi depoda toplanır (`docs/`); gereksinimlerin ana kopyası `docs/REQUIREMENTS.md`, Sheets tablosu takip görünümü olarak senkron tutulur | Tek doğru kaynak; her oturum aynı yerden başlar |
 | 2026-11-17 | Keşif bölümü tasarıma eklendi: tür, hot list, aktif setler, resmi oynatıcı, mağaza linki, sete uyum sütunu | 1001Tracklists benzeri keşif + bizim uyum farkımız |
 | 2026-11-17 | Ürünün merkezi: AI koç + AI B2B partneri; seviyeli müfredat, FLX4 ile ölçülen drill'ler | Kullanıcının asıl hayali; aramalarda boş görünen alan |

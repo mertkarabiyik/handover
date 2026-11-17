@@ -28,9 +28,17 @@ Interface languages: Turkish, English and German. The browser language is picked
 
 ## How it is built
 
-A single self-contained file, `index.html`: HTML, CSS and plain JavaScript with no build step and no dependencies apart from Google Fonts. Data is stored in the browser's `localStorage`; nothing is sent to a server.
+The features above are the v0 prototype in `legacy/index.html`: a single self-contained file (HTML, CSS and plain JavaScript, no build step, no dependencies apart from Google Fonts). Data is stored in the browser's `localStorage`; nothing is sent to a server.
 
-To run it locally, open `index.html` in a browser.
+The training app is being rebuilt from the screen designs. `index.html` plus `src/ui/` is a clickable prototype of the five designed screens (training home, lesson, drill, AI-partner B2B, discover) with sample data; there is no MIDI or audio yet. No build step either.
+
+To run it locally on Windows:
+
+```
+powershell -ExecutionPolicy Bypass -File tools/serve.ps1
+```
+
+then open http://localhost:5173. The v0 file can still be opened directly in a browser.
 
 ## Roadmap
 
