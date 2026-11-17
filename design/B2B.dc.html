@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Handover · AI partnerle B2B</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Instrument+Sans:wght@400;500;600&amp;family=Unbounded:wght@600;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#15121c}
+a{color:#ff7a2f}a:hover{color:#ffa06b}
+</style>
+</helmet>
+<div style="min-height: 800px; background: #15121c; color: #f1ecdf; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.45">
+<header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 18px 32px; border-bottom: 1px solid #3b3549">
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #a69fb4; text-decoration: none; font-weight: 600"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>Antrenman</a>
+<div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap; font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">
+<span>B2B · 24:10</span><span style="padding: 2px 10px; border: 1px solid #b388ff; border-radius: 999px; color: #c9b0ff">Partner: peak-time</span>
+</div>
+</header>
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 48px; display: flex; flex-direction: column; gap: 20px">
+
+<section aria-label="Oturum akışı" style="overflow-x: auto">
+<ol style="list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 8px; min-width: 760px">
+<sc-for list="{{history}}" as="h" hint-placeholder-count="6">
+<li style="display: flex; align-items: center; gap: 8px">
+<div style="{{h.box}}"><span style="font-size: 12px; color: #a69fb4">{{h.who}}</span><span style="font-family: 'DM Mono', monospace; font-size: 13px">{{h.meta}}</span></div>
+<span style="{{h.pillStyle}}">{{h.pill}}</span>
+</li>
+</sc-for>
+</ol>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<section aria-labelledby="pt" style="flex: 1 1 420px; min-width: 0; background: #1f1b29; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+<h2 id="pt" style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #c9b0ff; font-weight: 600">Partner çalıyor · Deck B</h2>
+<span style="font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">130.0 BPM · <span style="color: #8fd0ff">9A</span> · E8</span>
+</div>
+<div style="font-weight: 600; font-size: 20px">[Partnerin şarkısı] · [Sanatçı]</div>
+<div style="height: 64px; display: flex; align-items: center; gap: 2px" aria-hidden="true">
+<sc-for list="{{wave}}" as="w" hint-placeholder-count="72"><span style="{{w}}"></span></sc-for>
+</div>
+<div style="background: #2a2536; border-radius: 12px; padding: 14px 16px; display: flex; flex-direction: column; gap: 4px">
+<span style="font-size: 12px; color: #c9b0ff; font-weight: 600">Partner</span>
+<p style="margin: 0; font-size: 16px">Enerjiyi yükseltiyorum: 130 BPM, 9A. Bir sonraki phrase'te bas sende. Sert bir şeyle gel.</p>
+</div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+<span style="font-family: 'DM Mono', monospace; color: #a69fb4">Sıra sana geçiyor</span>
+<span style="font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 800; font-size: 28px; color: #ff7a2f">48 vuruş</span>
+</div>
+</section>
+
+<section aria-labelledby="mine" style="flex: 1 1 420px; min-width: 0; background: #1f1b29; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+<h2 id="mine" style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #ff7a2f; font-weight: 600">Cevabın · Deck A'ya yükle</h2>
+<span style="font-size: 13px; color: #a69fb4">Uyuma göre sıralı</span>
+</div>
+<ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{options}}" as="o" hint-placeholder-count="4">
+<li><button type="button" onClick="{{o.pick}}" aria-pressed="{{o.pressed}}" style="{{o.btn}}">
+<span style="display: flex; flex-direction: column; gap: 2px; min-width: 0"><span style="font-weight: 600">{{o.title}}</span><span style="font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">{{o.meta}}</span></span>
+<span style="{{o.pillStyle}}">{{o.pill}}</span>
+</button></li>
+</sc-for>
+</ul>
+<p style="margin: 0; color: #a69fb4; font-size: 14px">{{why}}</p>
+<button type="button" style="min-height: 48px; border-radius: 10px; border: 0; background: #ff7a2f; color: #1a0d04; font: inherit; font-weight: 600; cursor: pointer">Deck A'ya yükle ve cue'la</button>
+</section>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { picked: 0 }; }
+  pill(lv) {
+    var t = ['✓ Temiz', '! Dikkat', '✕ Zor'][lv], c = ['#5fd38a', '#f5cf4a', '#ff4f7b'][lv];
+    return { pill: t, pillStyle: 'flex: none; font-family: \'DM Mono\', monospace; font-size: 12px; white-space: nowrap; padding: 1px 9px; border-radius: 999px; color: ' + c + '; border: 1px solid ' + c };
+  }
+  renderVals() {
+    var self = this;
+    var hist = [
+      ['Sen', '126 · 8A', 0], ['Partner', '127 · 8A', 0], ['Sen', '128 · 9A', 1],
+      ['Partner', '128 · 9A', 0], ['Sen', '128 · 10A', 0], ['Partner', '130 · 9A', -1]
+    ];
+    var history = hist.map(function (h, i) {
+      var p = h[2] >= 0 ? self.pill(h[2]) : { pill: 'şimdi', pillStyle: 'font-size: 12px; color: #c9b0ff' };
+      var partner = h[0] === 'Partner';
+      return {
+        who: h[0], meta: h[1], pill: i === hist.length - 1 ? '' : p.pill, pillStyle: i === hist.length - 1 ? 'display: none' : p.pillStyle,
+        box: 'display: flex; flex-direction: column; padding: 8px 12px; border-radius: 10px; background: ' + (partner ? '#241f33' : '#1f1b29') + '; border: 1px solid ' + (i === hist.length - 1 ? '#b388ff' : '#3b3549')
+      };
+    });
+    var opts = [
+      ['[Şarkın 1]', '131 BPM · 10A · E9', 0, 'Komşu key, +1 BPM, enerjiyi bir basamak yukarı taşıyor. Partnerin istediği tam bu.'],
+      ['[Şarkın 2]', '130 BPM · 9B · E8', 0, 'Aynı numara, majör eşi: temiz ama enerjiyi yükseltmiyor.'],
+      ['[Şarkın 3]', '128 BPM · 8A · E9', 1, 'Key çapraz ve 2 BPM düşük: yapılabilir ama dikkat ister.'],
+      ['[Şarkın 4]', '124 BPM · 3A · E6', 2, 'Key çakışıyor, BPM %4,6 düşük ve enerji düşüyor. Partnerin yükselişini keser.']
+    ];
+    var options = opts.map(function (o, i) {
+      var on = self.state.picked === i, p = self.pill(o[2]);
+      return {
+        title: o[0], meta: o[1], pill: p.pill, pillStyle: p.pillStyle, pressed: on ? 'true' : 'false',
+        pick: function () { self.setState({ picked: i }); },
+        btn: 'width: 100%; min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; text-align: left; padding: 10px 14px; border-radius: 10px; font: inherit; color: #f1ecdf; cursor: pointer; background: ' + (on ? '#2a2536' : '#15121c') + '; border: 1px solid ' + (on ? '#ff7a2f' : '#3b3549')
+      };
+    });
+    var wave = [];
+    for (var i = 0; i < 72; i++) {
+      var h = 16 + Math.abs(Math.sin(i * 0.8 + 2.2) * 28 + Math.sin(i * 0.31) * 18);
+      if (i % 4 === 0) h = Math.min(62, h + 12);
+      wave.push('flex: 1; min-width: 1px; border-radius: 1px; height: ' + Math.round(h) + 'px; background: ' + (i < 40 ? '#b388ff' : '#3b3549'));
+    }
+    return { history: history, options: options, why: opts[this.state.picked][3], wave: wave };
+  }
+}
+</script>
+</body>
+</html>

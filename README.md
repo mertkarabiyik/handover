@@ -42,6 +42,17 @@ To run it locally, open `index.html` in a browser.
 
 Audio files never leave the user's device; Handover does not host or stream copyrighted music.
 
+## Project documents
+
+- [`docs/VISION.md`](docs/VISION.md) – product definition (Turkish)
+- [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md) – technical system and build order
+- [`docs/REQUIREMENTS.md`](docs/REQUIREMENTS.md) – requirements
+- [`docs/RESEARCH.md`](docs/RESEARCH.md) – market and data-source research
+- [`docs/DECISIONS.md`](docs/DECISIONS.md) – decision log
+- [`docs/REVIEW.md`](docs/REVIEW.md) – latest system review
+- [`design/`](design/) – screen designs
+- [`supabase/migrations/`](supabase/migrations/) – database schema (project paused)
+
 ## Status
 
 Early prototype. All rights reserved.

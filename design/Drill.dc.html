@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Handover · Drill: bass swap</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Instrument+Sans:wght@400;500;600&amp;family=Unbounded:wght@600;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#15121c}
+a{color:#ff7a2f}a:hover{color:#ffa06b}
+</style>
+</helmet>
+<div style="min-height: 800px; background: #15121c; color: #f1ecdf; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.45">
+<header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 18px 32px; border-bottom: 1px solid #3b3549">
+<a href="Ders.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #a69fb4; text-decoration: none; font-weight: 600"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>Ders</a>
+<div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap">
+<span style="font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">Bass swap · deneme 2 / 5</span>
+<span style="display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; border: 1px solid #3b3549; border-radius: 999px; font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #5fd38a; display: inline-block"></span>FLX4</span>
+</div>
+</header>
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 24px 24px 48px; display: flex; flex-direction: column; gap: 20px">
+
+<section aria-label="Canlı durum" style="background: #1f1b29; border-radius: 16px; padding: 20px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px">
+<div style="display: flex; align-items: baseline; gap: 14px; flex-wrap: wrap">
+<span style="font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 800; font-size: 48px; line-height: 1; color: #ff7a2f">13</span>
+<span style="font-family: 'DM Mono', monospace; color: #a69fb4">/ 32 vuruş</span>
+</div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<div style="display: grid; grid-template-columns: repeat(32, minmax(0, 1fr)); gap: 3px" aria-hidden="true">
+<sc-for list="{{dots}}" as="d" hint-placeholder-count="32"><span style="{{d}}"></span></sc-for>
+</div>
+<p style="margin: 0; font-size: 17px; font-weight: 600">Swap'a 4 vuruş. Hazır ol: A'nın Low'u kapanacak, B'ninki açılacak.</p>
+</div>
+</section>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px">
+<section aria-label="Deck A" style="flex: 1 1 420px; min-width: 0; background: #1f1b29; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap">
+<div><span style="font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">DECK A · çalıyor</span><div style="font-weight: 600; font-size: 17px">[Şarkı A] · [Sanatçı]</div></div>
+<div style="font-family: 'DM Mono', monospace; display: flex; gap: 12px"><span>128.0 BPM</span><span style="color: #8fd0ff">8A</span></div>
+</div>
+<div style="height: 72px; display: flex; align-items: center; gap: 2px; position: relative" aria-hidden="true">
+<sc-for list="{{waveA}}" as="w" hint-placeholder-count="80"><span style="{{w}}"></span></sc-for>
+</div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; font-family: 'DM Mono', monospace; font-size: 13px">
+<div style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 6px"><span style="color: #a69fb4">Low EQ</span><div style="height: 8px; border-radius: 4px; background: #2a2536; overflow: hidden"><div style="height: 100%; width: 100%; background: #ff7a2f"></div></div></div>
+<div style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 6px"><span style="color: #a69fb4">Fader</span><div style="height: 8px; border-radius: 4px; background: #2a2536; overflow: hidden"><div style="height: 100%; width: 100%; background: #f1ecdf"></div></div></div>
+</div>
+</section>
+
+<section aria-label="Deck B" style="flex: 1 1 420px; min-width: 0; background: #1f1b29; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 14px; border: 1px solid #ff7a2f">
+<div style="display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap">
+<div><span style="font-family: 'DM Mono', monospace; font-size: 13px; color: #ff7a2f">DECK B · giriyor</span><div style="font-weight: 600; font-size: 17px">[Şarkı B] · [Sanatçı]</div></div>
+<div style="font-family: 'DM Mono', monospace; display: flex; gap: 12px"><span>127.9 BPM</span><span style="color: #8fd0ff">9A</span></div>
+</div>
+<div style="height: 72px; display: flex; align-items: center; gap: 2px" aria-hidden="true">
+<sc-for list="{{waveB}}" as="w" hint-placeholder-count="80"><span style="{{w}}"></span></sc-for>
+</div>
+<div style="display: flex; gap: 24px; flex-wrap: wrap; font-family: 'DM Mono', monospace; font-size: 13px">
+<div style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 6px"><span style="color: #a69fb4">Low EQ</span><div style="height: 8px; border-radius: 4px; background: #2a2536; overflow: hidden"><div style="height: 100%; width: 4%; background: #ff7a2f"></div></div></div>
+<div style="flex: 1 1 140px; display: flex; flex-direction: column; gap: 6px"><span style="color: #a69fb4">Pitch farkı</span><span style="color: #5fd38a">−0,1 BPM · iyi</span></div>
+</div>
+</section>
+</div>
+
+<section aria-labelledby="res" style="background: #1f1b29; border-radius: 16px; padding: 24px; display: flex; flex-wrap: wrap; gap: 24px 40px">
+<div style="flex: 0 0 auto; display: flex; flex-direction: column; gap: 4px">
+<h2 id="res" style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #a69fb4; font-weight: 600">Deneme 1 sonucu</h2>
+<span style="font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 800; font-size: 56px; line-height: 1">72</span>
+<span style="font-family: 'DM Mono', monospace; color: #a69fb4">/ 100</span>
+</div>
+<ul style="flex: 1 1 420px; min-width: 0; list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px">
+<sc-for list="{{scores}}" as="s" hint-placeholder-count="3">
+<li style="display: flex; flex-direction: column; gap: 6px">
+<div style="display: flex; justify-content: space-between; gap: 12px"><span style="font-weight: 600">{{s.name}}</span><span style="{{s.numStyle}}">{{s.score}}</span></div>
+<div style="height: 6px; border-radius: 3px; background: #2a2536; overflow: hidden"><div style="{{s.bar}}"></div></div>
+<span style="color: #a69fb4; font-size: 14px">{{s.note}}</span>
+</li>
+</sc-for>
+</ul>
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  wave(seed, played, color) {
+    var out = [];
+    for (var i = 0; i < 80; i++) {
+      var h = 18 + Math.abs(Math.sin(i * 0.9 + seed) * 30 + Math.sin(i * 0.23 + seed * 2) * 22);
+      if (i % 4 === 0) h = Math.min(70, h + 14);
+      out.push('flex: 1; min-width: 1px; border-radius: 1px; height: ' + Math.round(h) + 'px; background: ' + (i < played ? color : '#3b3549'));
+    }
+    return out;
+  }
+  renderVals() {
+    var dots = [];
+    for (var i = 1; i <= 32; i++) {
+      var c = i <= 13 ? '#ff7a2f' : i === 17 ? '#f1ecdf' : '#2a2536';
+      dots.push('height: 10px; border-radius: 2px; background: ' + c);
+    }
+    var scores = [
+      ['Beatmatch', 94, 'Pitch farkı 0,1 BPM. Beat\'ler deneme boyunca kaymadı.', '#5fd38a'],
+      ['Bas zamanlaması', 58, 'Bası 3 vuruş erken değiştirdin (14. vuruşta). Phrase başını bekle: 17.', '#f5cf4a'],
+      ['A\'nın çıkışı', 80, 'Fader\'ı düzgün indirdin, ama 4 vuruş erken bitti.', '#5fd38a']
+    ].map(function (s) {
+      return { name: s[0], score: s[1], note: s[2],
+        numStyle: 'font-family: \'DM Mono\', monospace; color: ' + s[3],
+        bar: 'height: 100%; width: ' + s[1] + '%; background: ' + s[3] };
+    });
+    return { dots: dots, waveA: this.wave(1.3, 52, '#f1ecdf'), waveB: this.wave(4.1, 20, '#ff7a2f'), scores: scores };
+  }
+}
+</script>
+</body>
+</html>

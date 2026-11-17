@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Handover · Keşif</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Instrument+Sans:wght@400;500;600&amp;family=Unbounded:wght@600;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#15121c}
+a{color:#ff7a2f}a:hover{color:#ffa06b}
+</style>
+</helmet>
+<div style="min-height: 920px; background: #15121c; color: #f1ecdf; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.45">
+<header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 18px 32px; border-bottom: 1px solid #3b3549">
+<div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap">
+<a href="Main.dc.html" style="font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 800; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase; color: #f1ecdf; text-decoration: none">Hand<span style="color: #ff7a2f">o</span>ver</a>
+<nav aria-label="Ana menü" style="display: flex; gap: 4px; flex-wrap: wrap">
+<a href="Main.dc.html" style="padding: 8px 12px; border-radius: 8px; color: #a69fb4; text-decoration: none; font-weight: 600; font-size: 14px">Antrenman</a>
+<a href="#" style="padding: 8px 12px; border-radius: 8px; color: #a69fb4; text-decoration: none; font-weight: 600; font-size: 14px">Kütüphane</a>
+<a href="#" style="padding: 8px 12px; border-radius: 8px; color: #a69fb4; text-decoration: none; font-weight: 600; font-size: 14px">Set</a>
+<a href="Kesif.dc.html" aria-current="page" style="padding: 8px 12px; border-radius: 8px; background: #2a2536; color: #f1ecdf; text-decoration: none; font-weight: 600; font-size: 14px">Keşif</a>
+</nav>
+</div>
+<label style="display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 12px; border: 1px solid #3b3549; border-radius: 10px; color: #a69fb4; flex: 0 1 300px">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg>
+<span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Ara</span>
+<input type="search" placeholder="Parça, sanatçı, DJ ya da set ara" style="flex: 1; min-width: 0; background: transparent; border: 0; color: #f1ecdf; font: inherit; outline-offset: 2px">
+</label>
+</header>
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 28px 24px 48px; display: flex; flex-direction: column; gap: 22px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px">
+<h1 style="margin: 0; font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 800; font-size: 40px; line-height: 1.05; text-transform: uppercase">Keşif</h1>
+<span style="font-family: 'DM Mono', monospace; font-size: 12px; color: #a69fb4; border: 1px dashed #3b3549; border-radius: 6px; padding: 2px 8px">örnek veri · kaynak: [chart kaynağı]</span>
+</div>
+
+<div role="group" aria-label="Türler" style="display: flex; gap: 8px; flex-wrap: wrap">
+<sc-for list="{{genres}}" as="g" hint-placeholder-count="7">
+<button type="button" onClick="{{g.pick}}" aria-pressed="{{g.pressed}}" style="{{g.style}}">{{g.name}}</button>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-start">
+
+<section aria-labelledby="hot" style="flex: 999 1 600px; min-width: 0; background: #1f1b29; border-radius: 16px; padding: 20px; display: flex; flex-direction: column; gap: 12px">
+<div style="display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap">
+<h2 id="hot" style="margin: 0; font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 600; font-size: 16px; text-transform: uppercase">Hot list · {{genre}}</h2>
+<div role="group" aria-label="Liste" style="display: flex; gap: 4px; font-size: 13px">
+<button type="button" style="min-height: 32px; padding: 0 10px; border-radius: 8px; border: 1px solid #ff7a2f; background: #2a2536; color: #f1ecdf; font: inherit; cursor: pointer">Bu hafta</button>
+<button type="button" style="min-height: 32px; padding: 0 10px; border-radius: 8px; border: 1px solid #3b3549; background: transparent; color: #a69fb4; font: inherit; cursor: pointer">Yükselenler</button>
+<button type="button" style="min-height: 32px; padding: 0 10px; border-radius: 8px; border: 1px solid #3b3549; background: transparent; color: #a69fb4; font: inherit; cursor: pointer">Setlerde en çok</button>
+</div>
+</div>
+<p style="margin: 0; font-size: 13px; color: #a69fb4">Uyum sütunu, Set'indeki son şarkıya göre: 128 BPM · 8A.</p>
+<div style="overflow-x: auto">
+<ol style="list-style: none; margin: 0; padding: 0; min-width: 620px; display: flex; flex-direction: column">
+<sc-for list="{{chart}}" as="c" hint-placeholder-count="8">
+<li style="{{c.row}}">
+<span style="width: 28px; font-family: 'DM Mono', monospace; font-size: 15px">{{c.rank}}</span>
+<span style="{{c.moveStyle}}">{{c.move}}</span>
+<button type="button" onClick="{{c.play}}" aria-label="{{c.playLabel}}" style="{{c.playBtn}}"><svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M7 4l13 8-13 8z"></path></svg></button>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-weight: 600">{{c.title}}</span><span style="font-size: 13px; color: #a69fb4">{{c.artist}}</span></span>
+<span style="width: 92px; font-family: 'DM Mono', monospace; font-size: 13px">{{c.bpm}} · <span style="color: #8fd0ff">{{c.key}}</span></span>
+<span style="{{c.pillStyle}}">{{c.pill}}</span>
+</li>
+</sc-for>
+</ol>
+</div>
+</section>
+
+<section aria-labelledby="sets" style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+<h2 id="sets" style="margin: 0; font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 600; font-size: 16px; text-transform: uppercase">Aktif setler</h2>
+<sc-for list="{{sets}}" as="s" hint-placeholder-count="3">
+<a href="#" style="display: flex; flex-direction: column; gap: 8px; background: #1f1b29; border-radius: 12px; padding: 16px; color: #f1ecdf; text-decoration: none; border: 1px solid #1f1b29">
+<span style="display: flex; justify-content: space-between; gap: 8px; font-size: 12px; color: #a69fb4"><span>{{s.when}}</span><span style="{{s.liveStyle}}">{{s.live}}</span></span>
+<span style="font-weight: 600; font-size: 16px">{{s.dj}}</span>
+<span style="font-size: 14px; color: #a69fb4">{{s.where}}</span>
+<span style="font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">{{s.meta}}</span>
+<span style="font-size: 14px; font-weight: 600; color: #ff7a2f">Tracklist'i aç</span>
+</a>
+</sc-for>
+</section>
+</div>
+
+<section aria-labelledby="np" style="background: #1f1b29; border-radius: 16px; padding: 20px; display: flex; flex-wrap: wrap; gap: 16px 24px; align-items: center; border: 1px solid #3b3549">
+<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+<h2 id="np" style="margin: 0; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: #a69fb4; font-weight: 600">Dinleniyor</h2>
+<span style="font-weight: 600; font-size: 18px">{{now.title}}</span>
+<span style="color: #a69fb4; font-size: 14px">{{now.artist}} · {{now.bpm}} BPM · {{now.key}}</span>
+</div>
+<div style="flex: 2 1 360px; min-width: 0; min-height: 88px; border: 1px dashed #3b3549; border-radius: 10px; display: flex; align-items: center; justify-content: center; padding: 12px; text-align: center; color: #a69fb4; font-size: 14px">Servisin resmi oynatıcısı burada (SoundCloud, YouTube ya da Beatport önizlemesi). Ses bizim sunucumuzdan geçmez.</div>
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 8px">
+<a href="#" style="display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 10px; background: #ff7a2f; color: #1a0d04; font-weight: 600; text-decoration: none">Beatport'ta al</a>
+<div style="display: flex; gap: 8px">
+<a href="#" style="flex: 1; display: flex; align-items: center; justify-content: center; min-height: 44px; border-radius: 10px; border: 1px solid #3b3549; color: #f1ecdf; font-weight: 600; text-decoration: none">Bandcamp</a>
+<button type="button" style="flex: 1; min-height: 44px; border-radius: 10px; border: 1px solid #3b3549; background: transparent; color: #f1ecdf; font: inherit; font-weight: 600; cursor: pointer">İstek listem</button>
+</div>
+</div>
+</section>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":920}}'>
+class Component extends DCLogic {
+  constructor(props) { super(props); this.state = { genre: 1, playing: 0 }; }
+  pill(lv) {
+    var t = ['✓ Temiz', '! Dikkat', '✕ Zor'][lv], c = ['#5fd38a', '#f5cf4a', '#ff4f7b'][lv];
+    return { pill: t, pillStyle: 'width: 84px; flex: none; text-align: center; font-family: \'DM Mono\', monospace; font-size: 12px; white-space: nowrap; padding: 1px 0; border-radius: 999px; color: ' + c + '; border: 1px solid ' + c };
+  }
+  renderVals() {
+    var self = this;
+    var names = ['Techno', 'Peak-time techno', 'Hard techno', 'Melodic techno', 'Tech house', 'House', 'Club bangers'];
+    var genres = names.map(function (n, i) {
+      var on = self.state.genre === i;
+      return { name: n, pressed: on ? 'true' : 'false', pick: function () { self.setState({ genre: i }); },
+        style: 'min-height: 40px; padding: 0 14px; border-radius: 999px; font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; color: ' + (on ? '#1a0d04' : '#f1ecdf') + '; background: ' + (on ? '#ff7a2f' : 'transparent') + '; border: 1px solid ' + (on ? '#ff7a2f' : '#3b3549') };
+    });
+    var rows = [
+      ['[Parça 1]', 129, '9A', 0, '+3'], ['[Parça 2]', 130, '8A', 0, '='], ['[Parça 3]', 132, '10A', 1, 'yeni'],
+      ['[Parça 4]', 128, '3A', 2, '−2'], ['[Parça 5]', 130, '8B', 0, '+5'], ['[Parça 6]', 134, '11A', 2, '−1'],
+      ['[Parça 7]', 131, '7A', 0, '+1'], ['[Parça 8]', 129, '2B', 2, '−4']
+    ];
+    var chart = rows.map(function (r, i) {
+      var on = self.state.playing === i, p = self.pill(r[3]);
+      var up = r[4].charAt(0) === '+' || r[4] === 'yeni', down = r[4].charAt(0) === '−';
+      return {
+        rank: i + 1, move: r[4], title: r[0], artist: '[Sanatçı]', bpm: r[1], key: r[2], pill: p.pill, pillStyle: p.pillStyle,
+        moveStyle: 'width: 40px; font-family: \'DM Mono\', monospace; font-size: 12px; color: ' + (up ? '#5fd38a' : down ? '#ff4f7b' : '#a69fb4'),
+        play: function () { self.setState({ playing: i }); }, playLabel: r[0] + ' dinle',
+        playBtn: 'flex: none; width: 36px; height: 36px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; color: ' + (on ? '#1a0d04' : '#f1ecdf') + '; background: ' + (on ? '#ff7a2f' : '#2a2536') + '; border: 0',
+        row: 'display: flex; align-items: center; gap: 12px; padding: 10px 8px; border-radius: 10px; border-bottom: 1px solid #2a2536; background: ' + (on ? '#2a2536' : 'transparent')
+      };
+    });
+    var sets = [
+      ['Canlı', '[DJ adı] b2b [DJ adı]', '[Kulüp], [Şehir]', '3 saat · 41 parça · 12 ID', true],
+      ['Dün', '[DJ adı]', '[Festival] · ana sahne', '2 saat · 28 parça', false],
+      ['2 gün önce', '[DJ adı]', '[Radyo programı]', '1 saat · 19 parça', false]
+    ].map(function (s) {
+      return { when: s[0] === 'Canlı' ? 'Şu an' : s[0], dj: s[1], where: s[2], meta: s[3], live: s[4] ? '● Canlı' : '',
+        liveStyle: 'color: #ff4f7b; font-weight: 600' };
+    });
+    var n = rows[this.state.playing];
+    return { genres: genres, genre: names[this.state.genre], chart: chart, sets: sets,
+      now: { title: n[0], artist: '[Sanatçı]', bpm: n[1], key: n[2] } };
+  }
+}
+</script>
+</body>
+</html>

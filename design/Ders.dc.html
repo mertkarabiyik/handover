@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>Handover · Ders: bass swap</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Instrument+Sans:wght@400;500;600&amp;family=Unbounded:wght@600;800&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#15121c}
+a{color:#ff7a2f}a:hover{color:#ffa06b}
+</style>
+</helmet>
+<div style="min-height: 800px; background: #15121c; color: #f1ecdf; font-family: 'Instrument Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.45">
+<header style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; padding: 18px 32px; border-bottom: 1px solid #3b3549">
+<a href="Main.dc.html" style="display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: #a69fb4; text-decoration: none; font-weight: 600"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6l-6 6 6 6"></path></svg>Antrenman</a>
+<span style="font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">Seviye 3 · Ders 1 / 3</span>
+</header>
+
+<main style="max-width: 1200px; margin: 0 auto; padding: 32px 24px 48px; display: flex; flex-direction: column; gap: 28px">
+<div style="display: flex; flex-direction: column; gap: 8px">
+<p style="margin: 0; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #ff7a2f; font-weight: 600">Geçiş stili</p>
+<h1 style="margin: 0; font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 800; font-size: 44px; line-height: 1.05; text-transform: uppercase">Bass swap</h1>
+<p style="margin: 4px 0 0; color: #a69fb4; max-width: 62ch; font-size: 17px">İki kick ve iki bas aynı anda çalarsa ses çamurlaşır. Bass swap'ta basları değiştirirsin: phrase başında A'nın basını kesip B'ninkini açarsın. Teknoda 16 ya da 32 vuruşluk bölümlerde yapılır.</p>
+</div>
+
+<section aria-labelledby="tl" style="background: #1f1b29; border-radius: 16px; padding: 24px; display: flex; flex-direction: column; gap: 16px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap">
+<h2 id="tl" style="margin: 0; font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 600; font-size: 15px; text-transform: uppercase">32 vuruşluk geçiş</h2>
+<span style="font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">her kare 1 vuruş · 4 vuruş = 1 ölçü</span>
+</div>
+<div style="overflow-x: auto">
+<div style="min-width: 720px; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 92px; flex: none; font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">A · Low EQ</span>
+<div style="flex: 1; display: grid; grid-template-columns: repeat(32, minmax(0, 1fr)); gap: 3px">
+<sc-for list="{{beats}}" as="b" hint-placeholder-count="32"><span style="{{b.a}}"></span></sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 92px; flex: none; font-family: 'DM Mono', monospace; font-size: 13px; color: #a69fb4">B · Low EQ</span>
+<div style="flex: 1; display: grid; grid-template-columns: repeat(32, minmax(0, 1fr)); gap: 3px">
+<sc-for list="{{beats}}" as="b" hint-placeholder-count="32"><span style="{{b.b}}"></span></sc-for>
+</div>
+</div>
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="width: 92px; flex: none"></span>
+<div style="flex: 1; display: grid; grid-template-columns: repeat(32, minmax(0, 1fr)); gap: 3px; font-family: 'DM Mono', monospace; font-size: 12px; color: #a69fb4">
+<sc-for list="{{beats}}" as="b" hint-placeholder-count="32"><span style="{{b.labelStyle}}">{{b.label}}</span></sc-for>
+</div>
+</div>
+</div>
+</div>
+<div style="display: flex; gap: 20px; flex-wrap: wrap; font-size: 13px; color: #a69fb4">
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 3px; background: #ff7a2f"></span>Bas açık</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 14px; height: 14px; border-radius: 3px; background: #2a2536; border: 1px solid #3b3549"></span>Bas kapalı</span>
+<span style="display: inline-flex; align-items: center; gap: 6px"><span aria-hidden="true" style="width: 2px; height: 14px; background: #f1ecdf"></span>Swap anı: 17. vuruş, ikinci phrase'in başı</span>
+</div>
+</section>
+
+<section aria-labelledby="steps" style="display: flex; flex-direction: column; gap: 14px">
+<h2 id="steps" style="margin: 0; font-family: Unbounded, 'Arial Black', sans-serif; font-weight: 600; font-size: 15px; text-transform: uppercase">Adımlar</h2>
+<ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-wrap: wrap; gap: 12px">
+<li style="flex: 1 1 240px; min-width: 0; background: #1f1b29; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'DM Mono', monospace; color: #ff7a2f">01</span><strong style="font-weight: 600">B'nin Low EQ'sunu tamamen kıs</strong><span style="color: #a69fb4; font-size: 14px">Beatmatch'i önceki seviyedeki gibi yap.</span></li>
+<li style="flex: 1 1 240px; min-width: 0; background: #1f1b29; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'DM Mono', monospace; color: #ff7a2f">02</span><strong style="font-weight: 600">B'yi phrase başında başlat</strong><span style="color: #a69fb4; font-size: 14px">A yeni bir 16'lık bölüme girerken play'e bas.</span></li>
+<li style="flex: 1 1 240px; min-width: 0; background: #1f1b29; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'DM Mono', monospace; color: #ff7a2f">03</span><strong style="font-weight: 600">16 vuruş say, basları değiştir</strong><span style="color: #a69fb4; font-size: 14px">17. vuruşta A'nın Low'unu kapat, B'ninkini aç. Aynı anda.</span></li>
+<li style="flex: 1 1 240px; min-width: 0; background: #1f1b29; border-radius: 12px; padding: 16px; display: flex; flex-direction: column; gap: 6px"><span style="font-family: 'DM Mono', monospace; color: #ff7a2f">04</span><strong style="font-weight: 600">A'yı yavaşça çıkar</strong><span style="color: #a69fb4; font-size: 14px">Kalan 16 vuruşta A'nın fader'ını indir.</span></li>
+</ol>
+</section>
+
+<div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center">
+<a href="Drill.dc.html" style="display: inline-flex; align-items: center; min-height: 48px; padding: 0 24px; border-radius: 10px; background: #ff7a2f; color: #1a0d04; font-weight: 600; text-decoration: none">Drill'e başla: 5 deneme</a>
+<button type="button" style="min-height: 48px; padding: 0 20px; border-radius: 10px; border: 1px solid #3b3549; background: transparent; color: #f1ecdf; font: inherit; font-weight: 600; cursor: pointer">Örneği dinle</button>
+</div>
+</main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":800}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var beats = [];
+    for (var i = 1; i <= 32; i++) {
+      var swap = i === 17 ? 'box-shadow: -3px 0 0 0 #f1ecdf;' : '';
+      var on = 'height: 22px; border-radius: 3px; background: #ff7a2f;' + swap;
+      var off = 'height: 22px; border-radius: 3px; background: #2a2536; border: 1px solid #3b3549; box-sizing: border-box;' + swap;
+      beats.push({
+        a: i < 17 ? on : off,
+        b: i < 17 ? off : on,
+        label: (i === 1 || i === 9 || i === 17 || i === 25) ? String(i) : '',
+        labelStyle: 'text-align: left;' + (i === 17 ? 'color: #f1ecdf;' : '')
+      });
+    }
+    return { beats: beats };
+  }
+}
+</script>
+</body>
+</html>
